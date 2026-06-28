@@ -1,0 +1,273 @@
+/* =============================================
+   SAARTHI AI – ADK Agent Visualization (Light Theme)
+   ============================================= */
+
+/* ── ADK Tree Container ────────────────────── */
+.adk-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 20px;
+  min-width: 800px;
+}
+
+/* ── Root Agent Node ───────────────────────── */
+.adk-root-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.adk-root-pulse {
+  position: absolute;
+  inset: -10px;
+  border-radius: var(--radius-xl);
+  border: 2px solid rgba(124, 58, 237, 0.2);
+  animation: rootPulse 3s ease-in-out infinite;
+}
+
+.adk-root-pulse-2 {
+  animation-delay: 1.5s;
+}
+
+@keyframes rootPulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50%      { transform: scale(1.05); opacity: 0; }
+}
+
+.adk-root-card {
+  background: #ffffff;
+  border: 2px solid rgba(124, 58, 237, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 24px 32px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.1);
+  transition: all 0.3s;
+}
+
+.adk-root-card:hover {
+  border-color: rgba(124, 58, 237, 0.5);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.15);
+}
+
+.adk-root-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.adk-root-name {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-root-agent);
+  margin-bottom: 4px;
+}
+
+.adk-root-type {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.adk-root-desc {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Connector Lines ───────────────────────── */
+.adk-connector-down {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(124,58,237,0.3), rgba(37,99,235,0.3));
+}
+
+/* ── 3 Containers Row ──────────────────────── */
+.adk-containers-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* ── Container Cards ───────────────────────── */
+.adk-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 200px;
+}
+
+.adk-container-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  text-align: center;
+  border: 1px solid var(--border-card);
+  width: 100%;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+
+.adk-container-card.sequential {
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+.adk-container-card.parallel {
+  border-color: rgba(234, 88, 12, 0.25);
+}
+
+.adk-container-card.active {
+  box-shadow: 0 4px 20px rgba(15,188,249,0.15);
+  border-color: var(--color-accent-500);
+}
+
+.adk-container-icon {
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.adk-container-name {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+
+.adk-container-phase {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+/* ── Leaf Agent Cards ──────────────────────── */
+.adk-leaf-grid,
+.adk-parallel-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.adk-leaf-grid {
+  grid-template-columns: 1fr;
+}
+
+.adk-parallel-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.adk-leaf-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 8px;
+  text-align: center;
+  transition: all 0.4s;
+  cursor: default;
+  box-shadow: var(--shadow-sm);
+}
+
+.adk-leaf-card:hover {
+  border-color: var(--border-card);
+  box-shadow: var(--shadow-md);
+}
+
+/* Status States */
+.adk-leaf-card.processing {
+  border-color: var(--color-accent-500);
+  background: rgba(15,188,249,0.04);
+  animation: leafProcessing 1.5s ease-in-out infinite;
+}
+
+@keyframes leafProcessing {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(15,188,249,0.2); }
+  50%      { box-shadow: 0 0 0 6px rgba(15,188,249,0); }
+}
+
+.adk-leaf-card.completed {
+  border-color: var(--color-success);
+  background: rgba(16,185,129,0.04);
+}
+
+.adk-leaf-card.warning {
+  border-color: var(--color-warning);
+  background: rgba(245,158,11,0.04);
+}
+
+.adk-leaf-card.error {
+  border-color: var(--color-danger);
+  background: rgba(239,68,68,0.04);
+}
+
+.adk-leaf-icon {
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+
+.adk-leaf-num {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-bottom: 2px;
+}
+
+.adk-leaf-name {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.adk-leaf-score {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+/* ── Demo Log ──────────────────────────────── */
+#demo-log {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  min-height: 120px;
+  max-height: 280px;
+  overflow-y: auto;
+  line-height: 1.8;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .adk-containers-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .adk-container {
+    max-width: 100%;
+  }
+
+  .adk-parallel-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .adk-tree {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .adk-parallel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

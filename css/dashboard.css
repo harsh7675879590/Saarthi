@@ -1,0 +1,487 @@
+/* =============================================
+   SAARTHI AI – Dashboard (Pylon Light Theme)
+   Extra dashboard-specific styles
+   ============================================= */
+
+/* ── Hero Section (Landing) ────────────────── */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  min-height: calc(100vh - var(--header-height) - 60px);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: var(--content-max-width);
+  width: 100%;
+  align-items: center;
+}
+
+.hero-right {
+  position: relative;
+  min-height: 400px;
+}
+
+/* ── Role Cards (Login Selector) ─────────── */
+.role-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.role-card {
+  background: #ffffff;
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: var(--shadow-sm);
+}
+
+.role-card:hover {
+  border-color: var(--role-color, var(--color-accent-500));
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.role-card-emoji {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.role-card-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-heading);
+  margin-bottom: 4px;
+}
+
+.role-card-desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* ── Hero Stats ──────────────────────────── */
+.hero-stats {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.hero-stat-item {
+  text-align: center;
+}
+
+.hero-stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-accent-500);
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ── Hero Mock Cards ─────────────────────── */
+.hero-mock-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: all 0.4s;
+}
+
+.hero-mock-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.hero-mock-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 60px;
+}
+
+.hero-mock-sm-1 {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  padding: 14px 18px;
+  min-width: 180px;
+}
+
+.hero-mock-sm-2 {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  padding: 14px 18px;
+  min-width: 190px;
+}
+
+/* ── Hero Label ──────────────────────────── */
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15,188,249,0.08);
+  border: 1px solid rgba(15,188,249,0.2);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-accent-500);
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 900;
+  color: var(--text-heading);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ── Dashboard Specific ──────────────────── */
+.app-main {
+  background: var(--color-bg-surface);
+}
+
+/* ── Responsive ──────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right {
+    display: none;
+  }
+
+  .role-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 20px;
+  }
+}
+
+/* ── Pillar Tabs ────────────────────────── */
+.pillar-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--border-subtle);
+  margin-bottom: var(--space-4);
+  gap: var(--space-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pillar-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.pillar-tab {
+  padding: 12px 18px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.pillar-tab:hover {
+  color: var(--color-primary-500);
+  border-bottom-color: var(--border-subtle);
+}
+
+.pillar-tab.active {
+  color: var(--color-primary-500);
+  border-bottom-color: var(--color-primary-500);
+}
+
+.pillar-tab-badge {
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+}
+
+.pillar-tab-badge.warning {
+  background: rgba(245,158,11,0.12);
+  color: var(--color-warning);
+}
+
+.pillar-tab-badge.success {
+  background: rgba(16,185,129,0.12);
+  color: var(--color-success);
+}
+
+/* ── Pillar Content Panes ────────────────── */
+.pillar-pane {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.pillar-pane.active {
+  display: block;
+}
+
+/* ── Metric Widgets ──────────────────────── */
+.metric-widget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.metric-widget {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+
+.metric-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-card);
+}
+
+.metric-widget-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.metric-widget-value {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-heading);
+}
+
+.metric-widget-desc {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ── Verification Cards & Checklists ─────── */
+.verification-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+@media (max-width: 768px) {
+  .verification-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.verification-list {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+}
+
+.verification-list-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 8px;
+}
+
+.verification-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.verification-item:last-child {
+  border-bottom: none;
+}
+
+.verification-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.verification-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.verification-status.pass {
+  background: rgba(16,185,129,0.1);
+  color: var(--color-success);
+}
+
+.verification-status.warning {
+  background: rgba(245,158,11,0.1);
+  color: var(--color-warning);
+}
+
+.verification-status.fail {
+  background: rgba(239,68,68,0.1);
+  color: var(--color-danger);
+}
+
+/* ── Doc Validation Cards ────────────────── */
+.doc-status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.doc-status-card {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s;
+}
+
+.doc-status-card.verified {
+  border-left: 3px solid var(--color-success);
+}
+
+.doc-status-card.warning {
+  border-left: 3px solid var(--color-warning);
+}
+
+.doc-status-icon {
+  font-size: 1.25rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doc-status-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.doc-status-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doc-status-meta {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+/* ── Revenue Reconciliation Visual ───────── */
+.reconciliation-wrap {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.reconcile-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reconcile-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reconcile-bar-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.reconcile-bar-outer {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.reconcile-bar-inner {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-400);
+}
+
+.reconcile-bar-inner.gst { background: var(--color-info); }
+.reconcile-bar-inner.itr { background: var(--color-primary-500); }
+.reconcile-bar-inner.bank { background: var(--color-success); }
+
