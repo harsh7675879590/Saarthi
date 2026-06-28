@@ -12,7 +12,7 @@ const SaarthiData = {
     applicant:  { id: 'applicant',  name: 'Raj Mehta',      title: 'Applicant',      emoji: '👤', color: '#0ea5e9', glow: 'rgba(14,165,233,0.2)' },
     officer:    { id: 'officer',    name: 'Priya Sharma',   title: 'Loan Officer',   emoji: '👩‍💼', color: '#7c3aed', glow: 'rgba(124,58,237,0.2)' },
     risk:       { id: 'risk',       name: 'Arjun Kapoor',   title: 'Risk Manager',   emoji: '🛡️', color: '#dc2626', glow: 'rgba(220,38,38,0.2)' },
-    admin:      { id: 'admin',      name: 'Sunita Reddy',   title: 'Admin',          emoji: '⚙️', color: '#d97706', glow: 'rgba(217,119,6,0.2)'  },
+    admin:      { id: 'admin',      name: 'Harshit Gupta',  title: 'Admin',          emoji: '⚙️', color: '#d97706', glow: 'rgba(217,119,6,0.2)'  },
   },
 
   // ── Loan Cases ────────────────────────────
@@ -470,7 +470,7 @@ Valid for 15 days. Questions? Reply to this message.`,
     {
       title: '10 Specialized AI Agents: The Future of Credit Assessment',
       date: '08 Jun 2024',
-      author: 'Sunita Reddy',
+      author: 'Harshit Gupta',
       comments: 8,
       image: 'assets/images/service-personal.png',
     },
